@@ -66,9 +66,12 @@ sys_dup(void)
   return fd;
 }
 
+//int readcount = 0;
+
 int
 sys_read(void)
 {
+  //readcount++;
   struct file *f;
   int n;
   char *p;
@@ -442,3 +445,11 @@ sys_pipe(void)
   fd[1] = fd1;
   return 0;
 }
+
+//--------------------
+// int
+// sys_getreadcount(void)
+// {
+//   return readcount;
+// }
+//--------------------
