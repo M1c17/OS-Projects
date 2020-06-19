@@ -129,9 +129,7 @@ static int (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
-//----------------------------------
 [SYS_getreadcount]  sys_getreadcount,
-//----------------------------------
 };
 
 void
@@ -142,6 +140,8 @@ syscall(void)
 
   num = curproc->tf->eax;
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
+    if (num == SYS_read)
+      myproc()->readcount++;
     curproc->tf->eax = syscalls[num]();
   } else {
     cprintf("%d %s: unknown sys call %d\n",
