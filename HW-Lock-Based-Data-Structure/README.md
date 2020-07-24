@@ -41,7 +41,26 @@ hw.physicalcpu: 2
 $ gcc -pthread counter.c -o counter.out
 $ ./counter.out
 
+cpus is: 1
+1 threads
+global variable count: 1000000
+Time (seconds): 0.054727
 
+2 threads
+global variable count: 2000000
+Time (seconds): 0.152406
+
+3 threads
+global variable count: 3000000
+Time (seconds): 0.185426
+
+4 threads
+global variable count: 4000000
+Time (seconds): 0.236136
+
+5 threads
+global variable count: 5000000
+Time (seconds): 0.299559
 ```
 3. Next, build a version of the sloppy counter. Once again, measure its performance as the number of threads varies, as well as the threshold. Do the numbers match what you see in the chapter?
 4. Build a version of a linked list that uses hand-over-hand locking [MS04], as cited in the chapter. You should read the paper first to understand how it works, and then implement it. Measure its performance. When does a hand-over-hand list work better than a standard list as shown in the chapter?
