@@ -1,5 +1,5 @@
-#ifndef _thread_helper_h
-#define _thread_helper_h
+// #ifndef _thread_helper_h
+// #define _thread_helper_h
 
 #include <pthread.h>
 #include <errno.h>
@@ -24,4 +24,4 @@
 #define Pthread_setaffinity_np(thread, cpusetsize, cpuset)             \
     assert(pthread_setaffinity_np(thread, cpusetsize, cpuset) == 0)
 
-#endif    // _thread_helper_h
+//#endif    // _thread_helper_h
